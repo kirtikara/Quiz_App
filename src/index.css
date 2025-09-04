@@ -1,23 +1,38 @@
+/* ========================================
+   CSS CUSTOM PROPERTIES (VARIABLES)
+   ======================================== */
+
 :root {
-  --bg: #0f172a;          /* slate-900 */
-  --panel: #111827;       /* gray-900 */
-  --card: #1f2937;        /* gray-800 */
-  --text: #e5e7eb;        /* gray-200 */
-  --muted: #9ca3af;       /* gray-400 */
-  --primary: #6366f1;     /* indigo-500 */
-  --primary-600: #5558e6;
-  --success: #22c55e;     /* green-500 */
-  --danger: #ef4444;      /* red-500 */
+  /* Dark theme color palette using Tailwind CSS color system */
+  --bg: #0f172a;          /* slate-900 - Main background color */
+  --panel: #111827;       /* gray-900 - Panel/card background */
+  --card: #1f2937;        /* gray-800 - Individual card background */
+  --text: #e5e7eb;        /* gray-200 - Primary text color */
+  --muted: #9ca3af;       /* gray-400 - Muted/secondary text */
+  --primary: #6366f1;     /* indigo-500 - Primary brand color */
+  --primary-600: #5558e6; /* indigo-600 - Primary hover state */
+  --success: #22c55e;     /* green-500 - Success/correct answer color */
+  --danger: #ef4444;      /* red-500 - Error/wrong answer color */
 }
+
+/* ========================================
+   GLOBAL STYLES
+   ======================================== */
 
 body {
   margin: 0;
+  /* System font stack for optimal cross-platform rendering */
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
     Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  /* Gradient background for visual depth */
   background: linear-gradient(180deg, #0b1023, var(--bg));
   color: var(--text);
   min-height: 100vh;
 }
+
+/* ========================================
+   LAYOUT COMPONENTS
+   ======================================== */
 
 .app {
   max-width: 900px;
@@ -45,10 +60,18 @@ body {
   box-shadow: 0 10px 20px rgba(0,0,0,0.25);
 }
 
+/* ========================================
+   PAGE CONTAINERS
+   ======================================== */
+
 .quiz-container, .results-container, .start-container {
   max-width: 720px;
   margin: 24px auto;
 }
+
+/* ========================================
+   CARD COMPONENTS
+   ======================================== */
 
 .card, .result-card {
   background: var(--card);
@@ -57,6 +80,10 @@ body {
   padding: 16px;
   margin-bottom: 16px;
 }
+
+/* ========================================
+   QUIZ OPTIONS STYLING
+   ======================================== */
 
 .options button {
   display: block;
@@ -67,6 +94,7 @@ body {
   background: #fff;
   cursor: pointer;
   border-radius: 5px;
+  /* Smooth transitions for better UX */
   transition: transform 120ms ease, background 120ms ease;
   color: #000;
 }
@@ -80,6 +108,10 @@ body {
 .options button:active {
   transform: scale(0.98);
 }
+
+/* ========================================
+   BUTTON STYLES
+   ======================================== */
 
 .buttons {
   display: flex;
@@ -111,6 +143,10 @@ button:disabled {
   cursor: not-allowed;
 }
 
+/* ========================================
+   PROGRESS BAR STYLING
+   ======================================== */
+
 .progress {
   background: #ddd;
   border-radius: 5px;
@@ -124,10 +160,18 @@ button:disabled {
   border-radius: 5px;
 }
 
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(6px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* ========================================
+   STATUS INDICATORS
+   ======================================== */
 
 .correct {
   color: var(--success);
