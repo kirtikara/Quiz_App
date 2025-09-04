@@ -168,14 +168,17 @@ function QuizPage({ questions, answers, onAnswer, onFinish }) {
 
       {/* Timer display with live region for screen readers */}
       <div 
+        className={secondsLeft <= 10 ? "timer-warning" : ""}
         style={{ 
           marginTop: 8, 
           fontSize: 14, 
-          color: "var(--muted)" 
+          color: secondsLeft <= 10 ? "var(--danger)" : "var(--muted)",
+          fontWeight: secondsLeft <= 10 ? 700 : 400,
+          transition: "all 300ms ease"
         }} 
         aria-live="polite"
       >
-        Time left: {secondsLeft}s
+        ⏱️ Time left: {secondsLeft}s
       </div>
 
       {/* Question card */}
